@@ -14,12 +14,12 @@ But what if I already had all the needed code on hand and was able to run it som
 ## Bots
 
 - [ ] RSS notification — get notified each time an RSS feed is updated.
-- [x] Scheduled notification — get notifications based on cron jobs.
+- [x] [Scheduled notification](https://github.com/brachkow/nanobots/tree/main/bots/scheduled-message) — get notifications based on cron jobs.
   - Build a Google Sheet habit tracker by sending yourself a Google Form every day before sleep.
 - [ ] Webhook notification — get notifications on webhook requests.
 - [ ] HTML notification
   - Get notified when a Shopify store opens.
-- [x] GPT transformer — transforms your text message with OpenAI API using a predefined prompt. For example, you can:
+- [x] [GPT transformer](https://github.com/brachkow/nanobots/tree/main/bots/gpt-transformer) — transforms your text message with OpenAI API using a predefined prompt. For example, you can:
   - Fix spelling without changing writing style.
   - Rewrite the coldest Slavic email into the most best regarding English email.
 
