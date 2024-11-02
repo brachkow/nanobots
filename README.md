@@ -21,7 +21,7 @@ But what if I already had all the needed code on hand and was able to run it som
   - Get notified when a Shopify store opens.
 - [x] GPT transformer — transforms your text message with OpenAI API using a predefined prompt. For example, you can:
   - Fix spelling without changing writing style.
-  - Rewrite the coldest Slavic email into the most respectful English email.
+  - Rewrite the coldest Slavic email into the most best regarding English email.
 
 ## How to host a bot
 
