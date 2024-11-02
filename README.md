@@ -14,7 +14,8 @@ But what if I already had all needed code on hand, and was able to somwhere run 
 ## Bots
 
 - [ ] RSS notification — get notification each time RSS-feed got updated
-- [ ] Cron notification — get notifications based on cronjob
+- [x] Scheldued notification — get notifications based on cronjob
+  - Build a google sheet habit tracker by sending yourself google form every day before sleep
 - [ ] Webhook notification — get notifications on webhook request
 - [ ] HTML notification
   - Get notification when Shopify store gets opened
