@@ -6,4 +6,3 @@ compatibility_flags = ["nodejs_compat"]
 
 [observability]
 enabled = true
-enabled = true

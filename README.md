@@ -16,7 +16,8 @@ But what if I already had all the needed code on hand and was able to run it som
 - [ ] RSS notification — get notified each time an RSS feed is updated.
 - [x] [Scheduled notification](https://github.com/brachkow/nanobots/tree/main/bots/scheduled-message) — get notifications based on cron jobs.
   - Build a Google Sheet habit tracker by sending yourself a Google Form every day before sleep.
-- [ ] Webhook notification — get notifications on webhook requests.
+- [x] [Webhook notification](https://github.com/brachkow/nanobots/tree/main/bots/webhook-notification) — get notifications on webhook requests.
+  - Log important events from your backned to a telegram chat
 - [ ] HTML notification
   - Get notified when a Shopify store opens.
 - [x] [GPT transformer](https://github.com/brachkow/nanobots/tree/main/bots/gpt-transformer) — transforms your text message with OpenAI API using a predefined prompt. For example, you can:
