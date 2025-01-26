@@ -2,6 +2,7 @@ import { Bot, webhookCallback } from 'grammy';
 import { createOpenAI } from '@ai-sdk/openai';
 import { generateText } from 'ai';
 import { Hono } from 'hono';
+import { env } from 'hono/adapter';
 
 const app = new Hono<{
 	Bindings: {
@@ -11,7 +12,9 @@ const app = new Hono<{
 }>();
 
 app.all('*', (c) => {
-	const bot = new Bot(c.env.BOT_TOKEN);
+	const { BOT_TOKEN, OPENAI_API_KEY } = env(c);
+
+	const bot = new Bot(BOT_TOKEN);
 
 	bot.on('message', async (botContext) => {
 		const message = botContext.message;
@@ -19,7 +22,7 @@ app.all('*', (c) => {
 		console.log('Request!', JSON.stringify(c.req.raw));
 
 		const openAI = createOpenAI({
-			apiKey: c.env.OPENAI_API_KEY,
+			apiKey: OPENAI_API_KEY,
 		});
 
 		const { text } = await generateText({
