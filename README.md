@@ -26,6 +26,14 @@ But what if I already had all the needed code on hand and was able to run it som
 
 ## How to host a bot
 
+I personally host, and recommend you to host bot's as cloudflare workers.
+
+But if you want to host bot in other way, you may do them — code is wrapped as hono app so it is envrioment agnostic and can run in any serverless enviroment or on an actual server.
+
+Some of the bot's may depend on cloudflare resources like KV or SQLite DB. In such cases you need to tweak the code to make it work.
+
+### Here is the guide for cloudflare workers:
+
 1. You need to have an account on Cloudflare.
 2. Then you will be able to run `pnpm run deploy` inside the bot folder.
 3. Then go to Cloudflare dashboard → Workers and Pages → {your worker} → settings → variables and secrets and add needed secrets. For all bots, you will need `BOT_TOKEN` obtainable from [@botfather](https://t.me/BotFather). Depending on the bot, you may need to add other keys — you can check which key names you need by visiting the `index.ts` of your bot and inspecting the `Env` type interface.
