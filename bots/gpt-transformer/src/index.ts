@@ -1,37 +1,40 @@
 import { Bot, webhookCallback } from 'grammy';
 import { createOpenAI } from '@ai-sdk/openai';
 import { generateText } from 'ai';
+import { Hono } from 'hono';
 
-export interface Env {
-	BOT_TOKEN: string;
-	OPENAI_API_KEY: string;
-}
+const app = new Hono<{
+	Bindings: {
+		BOT_TOKEN: string;
+		OPENAI_API_KEY: string;
+	};
+}>();
 
-export default {
-	async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
-		const bot = new Bot(env.BOT_TOKEN);
+app.all('*', (c) => {
+	const bot = new Bot(c.env.BOT_TOKEN);
 
-		bot.on('message', async (ctx) => {
-			const message = ctx.message;
+	bot.on('message', async (botContext) => {
+		const message = botContext.message;
 
-			console.log('Request!', JSON.stringify(request));
+		console.log('Request!', JSON.stringify(c.req.raw));
 
-			const openAI = createOpenAI({
-				apiKey: env.OPENAI_API_KEY,
-			});
+		const openAI = createOpenAI({
+			apiKey: c.env.OPENAI_API_KEY,
+		});
 
-			const { text } = await generateText({
-				model: openAI('gpt-4-turbo'),
-				prompt: `
+		const { text } = await generateText({
+			model: openAI('gpt-4-turbo'),
+			prompt: `
         Translate this message into Polish language:
         
         ${message.text}
         `,
-			});
-
-			await ctx.reply(text);
 		});
 
-		return webhookCallback(bot, 'cloudflare-mod')(request);
-	},
-};
+		await botContext.reply(text);
+	});
+
+	return webhookCallback(bot, 'cloudflare-mod')(c.req.raw);
+});
+
+export default app;

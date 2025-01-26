@@ -17,6 +17,9 @@ importers:
       grammy:
         specifier: ^1.31.0
         version: 1.31.0
+      hono:
+        specifier: ^4.6.19
+        version: 4.6.19
     devDependencies:
       '@cloudflare/vitest-pool-workers':
         specifier: ^0.5.2
@@ -906,6 +909,10 @@ packages:
   hasown@2.0.2:
     resolution: {integrity: sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==}
     engines: {node: '>= 0.4'}
+
+  hono@4.6.19:
+    resolution: {integrity: sha512-Xw5DwU2cewEsQ1DkDCdy6aBJkEBARl5loovoL1gL3/gw81RdaPbXrNJYp3LoQpzpJ7ECC/1OFi/vn3UZTLHFEw==}
+    engines: {node: '>=16.9.0'}
 
   human-signals@5.0.0:
     resolution: {integrity: sha512-AXcZb6vzzrFAUE61HnN4mpLqd/cSIwNQjtNWR0euPm6y0iqx3G4gOXaIDdtdDwZmhwe82LA6+zinmW4UBWVePQ==}
@@ -2071,6 +2078,8 @@ snapshots:
   hasown@2.0.2:
     dependencies:
       function-bind: 1.1.2
+
+  hono@4.6.19: {}
 
   human-signals@5.0.0: {}
 
